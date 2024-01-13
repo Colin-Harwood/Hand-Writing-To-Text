@@ -11,6 +11,11 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'main/ch-high-resolution-logo - Copy.png' %}"
+    />
     <link rel="stylesheet" href="{% static 'main/home.css' %}" />
     {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
   </head>
@@ -46,7 +51,7 @@
             id="box"
             class="text-center d-flex flex-column align-items-center justify-content-center fluid shadow-lg"
           >
-            <h1 class="rect-text">Add your image here</h1>
+            <h1 class="rect-text" id="rect-text">Add your image here</h1>
             <input
               type="file"
               id="file-input"
@@ -71,9 +76,11 @@
       function updateFileName() {
         var input = document.getElementById("file-input");
         var fileName = document.getElementById("file-name");
+        var rectText = document.getElementById("rect-text");
 
         if (input.files && input.files.length > 0) {
           fileName.textContent = input.files[0].name;
+          rectText.textContent = "Click to change image";
         } else {
           fileName.textContent = "";
         }
