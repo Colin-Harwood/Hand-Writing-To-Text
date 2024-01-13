@@ -3,6 +3,10 @@
       width: 94% !important;
       margin: 25px 3% 10px 3% !important;
   }
+  #box-gen {
+    width: 94% !important;
+    margin: 25px 3% 10px 3% !important;
+}
   body {
     background: linear-gradient(to right, #298CFF ,#b6daff ) !important;
   }
@@ -13,10 +17,6 @@
 }
 
 
-p {
-  color: red;
-}
-
 body {
   background: linear-gradient(to right, #298CFF ,#EBF3FB );
 }
@@ -26,6 +26,14 @@ body {
 #box {
   width: 80%;
   height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 10%;
+  border: #aaaaaa solid 3px;
+}
+
+#box-gen {
+  width: 80%;
   background-color: white;
   border-radius: 10px;
   margin: 0 10%;
@@ -47,4 +55,8 @@ body {
 #file-name {
   color: #333;
   font-size: 16px;
+}
+
+.container-fluid {
+  margin-bottom: 50px !important;
 }
