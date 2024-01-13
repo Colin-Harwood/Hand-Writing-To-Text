@@ -23,26 +23,61 @@
     <![endif]-->
     <div
       class="container-fluid d-flex align-items-center justify-content-center"
-      style="height: 100vh"
+      style="height: 800px"
     >
       <div class="row w-100 fluid">
-        <div class="col-12 col-lg-6 text-center">
-          <h1>Welcome to the home page</h1>
-          <h1>Welcome to the home page</h1>
+        <div
+          class="col-12 col-lg-5 text-center d-flex flex-column justify-content-center align-items-center fluid"
+        >
+          <h1 class="head-text">
+            Welcome to EasiType, where we type your writing out!
+          </h1>
+          <h5 class="mt-2 mt-lg-5">
+            Have simple notes that you need to type out? Or maybe you have a lot
+            of writing to do but you don't have the time? We can help you with
+            that!<br />
+            Just upload your image and we'll do the rest!
+          </h5>
         </div>
         <div
-          class="col-12 col-lg-6 d-flex justify-content-center align-items-center fluid"
+          class="col-12 col-lg-7 d-flex justify-content-center align-items-center fluid"
         >
           <div
             id="box"
-            class="text-center d-flex align-items-center justify-content-center fluid"
+            class="text-center d-flex flex-column align-items-center justify-content-center fluid shadow-lg"
           >
-            <h1>Add your image here</h1>
+            <h1 class="rect-text">Add your image here</h1>
+            <input
+              type="file"
+              id="file-input"
+              style="display: none"
+              onchange="updateFileName()"
+              accept="image/*"
+            />
+            <button
+              class="btn btn-primary mt-3"
+              id="upload-btn"
+              onclick="document.getElementById('file-input').click();"
+            >
+              Upload Image
+            </button>
+            <span id="file-name" class="mt-2"></span>
           </div>
         </div>
       </div>
     </div>
-    <p class="text-center mt-5">Test</p>
-    <script src="" async defer></script>
+
+    <script>
+      function updateFileName() {
+        var input = document.getElementById("file-input");
+        var fileName = document.getElementById("file-name");
+
+        if (input.files && input.files.length > 0) {
+          fileName.textContent = input.files[0].name;
+        } else {
+          fileName.textContent = "";
+        }
+      }
+    </script>
   </body>
 </html>

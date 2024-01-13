@@ -1,7 +1,14 @@
 @media (max-width: 768px) {
   #box {
-      width: 90% !important;
-      margin: 0 6% 0 6% !important;
+      width: 94% !important;
+      margin: 25px 3% 10px 3% !important;
+  }
+  body {
+    background: linear-gradient(to right, #298CFF ,#b6daff ) !important;
+  }
+  .head-text {
+    font-size: 2.5em !important;
+    margin-top: 20px !important;
   }
 }
 
@@ -17,14 +24,27 @@ body {
 
 
 #box {
-  width: 70%;
+  width: 80%;
   height: 400px;
   background-color: white;
   border-radius: 10px;
-  margin: 0 15%;
+  margin: 0 10%;
+  border: #aaaaaa solid 3px;
 }
 
-.container {
-  margin: 0% !important;
-  padding:  0% !important;
+.col-lg-5 {
+  color: white;
+}
+
+.rect-text {
+  color: #878787;
+}
+
+.head-text {
+  font-size: 3.5em;
+}
+
+#file-name {
+  color: #333;
+  font-size: 16px;
 }
