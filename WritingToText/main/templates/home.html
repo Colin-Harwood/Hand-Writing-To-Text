@@ -9,7 +9,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title></title>
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Automatic hand writing to text generator."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="icon"
@@ -120,6 +123,29 @@
           rectText.textContent = "Click to change image";
         } else {
           fileName.textContent = "";
+        }
+      }
+
+      function sendImageToServer() {
+        var input = document.getElementById("file-input");
+        if (input.files && input.files.length > 0) {
+          var file = input.files[0];
+          var formData = new FormData();
+          formData.append("image", file);
+
+          fetch("https://your-server.com/api", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Handle the response data here
+              console.log(data);
+            })
+            .catch((error) => {
+              // Handle the error here
+              console.error(error);
+            });
         }
       }
     </script>
