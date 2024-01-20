@@ -17,6 +17,10 @@
   .container-fluid {
     margin-bottom: 0px !important;
   }
+  canvas {
+    width: 350px !important;
+    height: 350px !important;
+  }
 }
 
 
@@ -27,8 +31,7 @@ body {
 
 
 #box {
-  width: 400px;
-  height: 400px;
+  
   background-color: black;
   
   margin: 0 10%;
@@ -66,4 +69,8 @@ body {
 
 .text-left {
   text-align: left;
+}
+canvas {
+  width: 700px !important;
+  height: 500px !important;
 }
