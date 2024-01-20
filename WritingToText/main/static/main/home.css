@@ -27,10 +27,10 @@ body {
 
 
 #box {
-  width: 80%;
+  width: 400px;
   height: 400px;
-  background-color: white;
-  border-radius: 10px;
+  background-color: black;
+  
   margin: 0 10%;
   border: #aaaaaa solid 3px;
 }
