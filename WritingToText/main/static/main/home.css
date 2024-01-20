@@ -34,7 +34,7 @@ body {
   
   background-color: black;
   
-  margin: 0 10%;
+  
   border: #aaaaaa solid 3px;
 }
 
@@ -71,6 +71,6 @@ body {
   text-align: left;
 }
 canvas {
-  width: 700px !important;
+  width: 600px !important;
   height: 500px !important;
 }
