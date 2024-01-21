@@ -70,7 +70,7 @@
           class="btn btn-outline-primary mt-1 mt-lg-3 shadow-lg"
           id="upload-btn"
           type="submit"
-          onclick=""
+          onclick="sendImageToServer()"
           style="
             width: 300px;
             font-size: 2.2em;
@@ -117,26 +117,35 @@
       }
 
       function sendImageToServer() {
-        var input = document.getElementById("file-input");
-        if (input.files && input.files.length > 0) {
-          var file = input.files[0];
-          var formData = new FormData();
-          formData.append("image", file);
+        var canvas = document.getElementById("box");
+        var dataUrl = canvas.toDataURL("image/png");
 
-          fetch("http://127.0.0.1:8000/api", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              // Handle the response data here
-              console.log(data);
-            })
-            .catch((error) => {
-              // Handle the error here
-              console.error(error);
-            });
+        // Convert data URL to blob
+        var byteString = atob(dataUrl.split(",")[1]);
+        var mimeString = dataUrl.split(",")[0].split(":")[1].split(";")[0];
+        var ab = new ArrayBuffer(byteString.length);
+        var ia = new Uint8Array(ab);
+        for (var i = 0; i < byteString.length; i++) {
+          ia[i] = byteString.charCodeAt(i);
         }
+        var blob = new Blob([ab], { type: mimeString });
+
+        var formData = new FormData();
+        formData.append("image", blob, "image.png");
+
+        fetch("http://127.0.0.1:8000/api", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the response data here
+            console.log(data);
+          })
+          .catch((error) => {
+            // Handle the error here
+            console.error(error);
+          });
       }
 
       var canvas = document.getElementById("box");
