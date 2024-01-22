@@ -1,0 +1,76 @@
+@media (max-width: 768px) {
+  #box {
+      width: 94% !important;
+      margin: 25px 3% 10px 3% !important;
+  }
+  #box-gen {
+    width: 94% !important;
+    margin: 25px 3% 10px 3% !important;
+}
+  body {
+    background: linear-gradient(to right, #298CFF ,#b6daff ) !important;
+  }
+  .head-text {
+    font-size: 2.5em !important;
+    margin-top: 20px !important;
+  }
+  .container-fluid {
+    margin-bottom: 0px !important;
+  }
+  canvas {
+    width: 350px !important;
+    height: 350px !important;
+  }
+}
+
+
+body {
+  background: linear-gradient(to right, #298CFF ,#EBF3FB );
+}
+
+
+
+#box {
+  
+  background-color: black;
+  
+  
+  border: #aaaaaa solid 3px;
+}
+
+#box-gen {
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 10%;
+  border: #aaaaaa solid 3px;
+}
+
+.col-lg-5 {
+  color: white;
+}
+
+.rect-text {
+  color: #878787;
+}
+
+.head-text {
+  font-size: 3.5em;
+}
+
+#file-name {
+  color: #333;
+  font-size: 16px;
+}
+
+.container-fluid {
+  margin-bottom: 50px;
+}
+
+.text-left {
+  text-align: left;
+}
+canvas {
+  width: 600px !important;
+  height: 500px !important;
+}

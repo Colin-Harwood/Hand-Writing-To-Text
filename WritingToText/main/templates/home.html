@@ -128,13 +128,11 @@
           .then((response) => response.json())
           .then((data) => {
             // Handle the response data here
-            console.log(data);
             var numberField = document.getElementById("numberField");
             numberField.textContent = "You're number is: " + data.number;
           })
           .catch((error) => {
             // Handle the error here
-            console.error(error);
           });
       }
 
