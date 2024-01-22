@@ -37,15 +37,12 @@
           class="col-12 col-lg-5 text-center d-flex flex-column justify-content-center align-items-center fluid mt-lg-5"
         >
           <h1 class="head-text">
-            Welcome to EasiType, where we type your writing out!⌨️
+            Welcome to NumberFinder!⌨️<br /><br />
+            <h3>Write your number and let us find it!</h3>
           </h1>
-          <h5 class="mt-2 mt-lg-5 text-left">
-            <ul>
-              <li>Digitise Your Study Notes!📓</li>
-              <li>Archive Documents Easily!📄</li>
-              <li>Quickly Have Digital Files Instead of Paper!📁</li>
-            </ul>
-          </h5>
+          <h2 class="mt-2 mt-lg-5 text-left">
+            <p id="numberField">You're number is:</p>
+          </h2>
         </div>
         <div
           class="col-12 col-lg-7 d-flex flex-column justify-content-center align-items-center fluid mt-lg-5 text-center mx-auto"
@@ -82,16 +79,7 @@
         </button>
       </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center mt-lg-5 mt-3">
-      <div
-        id="box-gen"
-        class="text-left d-flex flex-column fluid shadow-lg px-3 mb-5"
-      >
-        <p style="color: #878787" class="mt-2">
-          Your letter will be displayed here...
-        </p>
-      </div>
-    </div>
+
     <footer
       class="text-center py-3 mt-5"
       style="background-color: #4885e8; color: white"
@@ -141,6 +129,8 @@
           .then((data) => {
             // Handle the response data here
             console.log(data);
+            var numberField = document.getElementById("numberField");
+            numberField.textContent = "You're number is: " + data.number;
           })
           .catch((error) => {
             // Handle the error here
@@ -167,7 +157,7 @@
 
       function draw(e) {
         if (!painting) return;
-        ctx.lineWidth = 35;
+        ctx.lineWidth = 60;
         ctx.lineCap = "round";
         ctx.strokeStyle = "white";
 

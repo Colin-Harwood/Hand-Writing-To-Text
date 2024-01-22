@@ -37,10 +37,6 @@ class ImageUploadView(APIView):
             
             print("Shape of array", img_array.shape)
 
-            # Display the preprocessed image
-            # Display the preprocessed image
-            plt.imshow(img_array[0], cmap='gray', vmin=0, vmax=1)
-            plt.show()
 
             # Load the model
 
