@@ -26,3 +26,6 @@ urlpatterns = [
     path('', main_views.home, name='home'),
     path('', include('api.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
