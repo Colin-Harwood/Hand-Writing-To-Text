@@ -17,10 +17,83 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="{% static 'main/ch-high-resolution-logo - Copy.png' %}"
+      href="{% static 'ch-high-resolution-logo - Copy.png' %}"
     />
-    <link rel="stylesheet" href="{% static 'main/home.css' %}">
+    <link rel="stylesheet" href="../../static/home.css" />
     {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+    <style>
+      @media (max-width: 768px) {
+        #box {
+          width: 94% !important;
+          margin: 25px 3% 10px 3% !important;
+        }
+        #box-gen {
+          width: 94% !important;
+          margin: 25px 3% 10px 3% !important;
+        }
+        body {
+          background: linear-gradient(to right, #298cff, #b6daff) !important;
+        }
+        .head-text {
+          font-size: 2.5em !important;
+          margin-top: 20px !important;
+        }
+        .container-fluid {
+          margin-bottom: 0px !important;
+        }
+        canvas {
+          width: 350px !important;
+          height: 350px !important;
+        }
+      }
+
+      body {
+        background: linear-gradient(to right, #298cff, #ebf3fb);
+      }
+
+      #box {
+        background-color: black;
+
+        border: #aaaaaa solid 3px;
+      }
+
+      #box-gen {
+        width: 80%;
+        background-color: white;
+        border-radius: 10px;
+        margin: 0 10%;
+        border: #aaaaaa solid 3px;
+      }
+
+      .col-lg-5 {
+        color: white;
+      }
+
+      .rect-text {
+        color: #878787;
+      }
+
+      .head-text {
+        font-size: 3.5em;
+      }
+
+      #file-name {
+        color: #333;
+        font-size: 16px;
+      }
+
+      .container-fluid {
+        margin-bottom: 50px;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+      canvas {
+        width: 600px !important;
+        height: 500px !important;
+      }
+    </style>
   </head>
   <body class="gradient-bg">
     <!--[if lt IE 7]>
