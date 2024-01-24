@@ -16,4 +16,4 @@ ENV SECRET_KEY=django-insecure-fhhh_si5j_y*z^vx1%vnpkzlmgzkjzn3)n1v=nwx@hvxx^a=x
 COPY . /code/
 
 # Run the application
-CMD ["gunicorn", "WritingToText.wsgi:application", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "WritingPredictor.wsgi:application", "-b", "0.0.0.0:8000"]
