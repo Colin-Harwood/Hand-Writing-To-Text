@@ -1,19 +1,24 @@
-# Use an official Python runtime based on Windows Server Core
-FROM python:3.11-slim-buster
+ARG PYTHON_VERSION=3.11-slim-bullseye
 
-# Set work directory
+FROM python:${PYTHON_VERSION}
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir -p /code
+
 WORKDIR /code
 
-# Install dependencies
-COPY requirements.txt /code/
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+RUN set -ex && \
+    pip install --upgrade pip && \
+    pip install -r /tmp/requirements.txt && \
+    rm -rf /root/.cache/
+COPY . /code
 
-# Set the secret key as an environment variable
-ENV SECRET_KEY=django-insecure-fhhh_si5j_y*z^vx1%vnpkzlmgzkjzn3)n1v=nwx@hvxx^a=x-
+ENV SECRET_KEY "yrMSj4EXhpmlMxYfTdwgL7xbfwfkAJKDRe5hxenW1r3ss7qJXC"
+RUN python manage.py collectstatic --noinput
 
-# Copy project
-COPY . /code/
+EXPOSE 8000
 
-# Run the application
-CMD ["gunicorn", "WritingPredictor.wsgi:application", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "WritingPredictor.wsgi"]
